@@ -9,8 +9,42 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        
+        List {
+            
+            ForEach(1..<10) { i in
+                
+                HStack{
+                    
+                    Text("\(i)")
+                }
+                .swipeActions {
+                    
+                    Button {
+                        
+                        print("trush")
+                    } label: {
+                        
+                        Image(systemName: "trash")
+                    }
+                    .tint(.red)
+
+                }
+                .swipeActions(edge: .leading) {
+                    
+                    Button {
+                        
+                        print("add")
+                    } label: {
+                        
+                        Image(systemName: "plus.circle")
+                    }
+                    .tint(.green)
+
+                }
+            }
+        }
+       
     }
 }
 
